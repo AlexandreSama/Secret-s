@@ -9,6 +9,7 @@
   "author": "Alexandre & Everyone in the server",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^13.1.0"
+    "discord.js": "^13.1.0",
+    "discord-akairo": "github:SkyBlockDev/discord-akairo"
   }
 }
