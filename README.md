@@ -4,7 +4,7 @@
 A bot for the roleplay Discord server : Psychose Dream
 
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](https://cdn.discordapp.com/attachments/885562441361137695/892058236553924729/image0.jpg)
 
     
 ## Technology Used For This Project
