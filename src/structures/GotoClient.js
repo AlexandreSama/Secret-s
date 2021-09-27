@@ -25,9 +25,11 @@ module.exports = class GotoClient extends AkairoClient {
 
         this.commandHandler = new CommandHandler(this, {
             allowMention: true,
-            prefix: "*",
+            prefix: config.prefix,
             defaultCooldown: 2000,
             directory: './src/commands/'
-        })
+        });
+
+        this.commandHandler.loadAll();
     }
 }

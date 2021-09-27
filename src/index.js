@@ -1,5 +1,8 @@
 const GotoClient = require('./structures/GotoClient')
+const config = require('./config.json')
 
-let client = new GotoClient()
+let client = new GotoClient({
+    prefix: config.prefix
+})
 
-client.login('NjQzNDk1NTg2NzgzNDI4NjE4.XcmT9w.lH__h3SJwnNXLE8fMRWhFFGL9RE')
+client.login(config.token)
