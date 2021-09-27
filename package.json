@@ -9,7 +9,8 @@
   "author": "Alexandre & Everyone in the server",
   "license": "ISC",
   "dependencies": {
+    "discord-akairo": "github:SkyBlockDev/discord-akairo",
     "discord.js": "^13.1.0",
-    "discord-akairo": "github:SkyBlockDev/discord-akairo"
+    "mysql": "^2.18.1"
   }
 }
