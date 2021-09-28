@@ -11,6 +11,8 @@
   "dependencies": {
     "discord-akairo": "github:SkyBlockDev/discord-akairo",
     "discord.js": "^13.1.0",
+    "markdown-it": "^12.2.0",
+    "markdown-it-emoji": "^2.0.0",
     "mysql": "^2.18.1"
   }
 }

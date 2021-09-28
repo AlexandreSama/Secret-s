@@ -3,8 +3,8 @@ const mysql = require('mysql')
 
 class TruthOrDareCommand extends Command {
     constructor() {
-        super('tod', {
-            aliases: ['tod']
+        super('secret\'s', {
+            aliases: ['secret\'s']
         });
     }
 
@@ -18,7 +18,8 @@ class TruthOrDareCommand extends Command {
 
             response.channel.awaitMessages({filter, max: 1}).then(collector1 => {
 
-                let tod = collector1.first().content;
+                let tod = collector1.first().content.toLowerCase();
+                console.log(tod)
 
                 if(tod === "action"){
 
@@ -34,11 +35,12 @@ class TruthOrDareCommand extends Command {
                         if(error){
                             console.log(error)
                         }
-                        let data = JSON.stringify(result)
-                        let dares = JSON.parse(data)
+                        let dataDare = JSON.stringify(result)
+                        let dares = JSON.parse(dataDare)
                         console.log(dares)
                         let oneDare = dares.random()
                         message.channel.send("<@" + message.author.id + "> ! " + oneDare['description'])
+                        connection.destroy()
                     })
 
                 }else if(tod === "vérité"){
@@ -55,10 +57,11 @@ class TruthOrDareCommand extends Command {
                         if(error){
                             console.log(error)
                         }
-                        let data = JSON.stringify(result)
-                        let truths = JSON.parse(data)
+                        let dataTruth = JSON.stringify(result)
+                        let truths = JSON.parse(dataTruth)
                         let oneTruth = truths.random()
                         message.channel.send("<@" + message.author.id + "> ! " + oneTruth['description'])
+                        connection.destroy()
                     })
 
                 }else{
