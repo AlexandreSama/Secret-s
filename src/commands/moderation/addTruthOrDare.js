@@ -3,7 +3,7 @@ const mysql = require('mysql')
 const md = require('markdown-it')();
 const emoji = require('markdown-it-emoji');
 
-class addToD extends Command {
+class addToDCommand extends Command {
     constructor() {
         super('addaov', {
             aliases: ['addaov']
@@ -50,4 +50,4 @@ class addToD extends Command {
     }
 }
 
-module.exports = addToD
+module.exports = addToDCommand
