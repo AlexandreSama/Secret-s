@@ -1,4 +1,6 @@
-const {Listener} = require('discord-akairo')
+const {Listener} = require('discord-akairo');
+const { Message } = require('discord.js');
+const schedule = require('node-schedule');
 
 class ReadyListener extends Listener {
     constructor(){
@@ -8,8 +10,11 @@ class ReadyListener extends Listener {
         });
     }
 
-    exec() {
+    exec(client) {
         console.log('Je suis prêt !')
+        const job = schedule.scheduleJob('Awards', '0 0 1 * *', function(){
+            console.log("Ca fait 1min")
+        })
     }
 }
 
