@@ -15,7 +15,7 @@ class WhoIsCommand extends Command {
         }
 
         message.delete()
-        message.channel.send("Ainsi tu souhaite résoudre une de mes petites énigmes ? :smirk \n Bien ! En voici une pour toi...").then(response1 => {
+        message.channel.send("Ainsi tu souhaite résoudre une de mes petites énigmes ? :smirk: Bien ! En voici une pour toi...").then(response1 => {
 
             var connection = mysql.createConnection({
                 host: "localhost",
