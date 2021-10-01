@@ -24,7 +24,8 @@ class addToDCommand extends Command {
                         var connection = mysql.createConnection({
                             host: "localhost",
                             user: "root",
-                            database: "Secret's",
+                            password: "alexandre123Sa",
+                            database: "secret's",
                             supportBigNumbers: true,
                             bigNumberString: true,
                             charset: 'utf8mb4_general_ci'

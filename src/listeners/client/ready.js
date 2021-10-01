@@ -1,6 +1,6 @@
 const {Listener} = require('discord-akairo');
-const { Message } = require('discord.js');
-const schedule = require('node-schedule');
+const Bree = require('bree');
+const Graceful = require('@ladjs/graceful')
 
 class ReadyListener extends Listener {
     constructor(){
@@ -12,9 +12,15 @@ class ReadyListener extends Listener {
 
     exec(client) {
         console.log('Je suis prêt !')
-        const job = schedule.scheduleJob('Awards', '0 0 1 * *', function(){
-            console.log("Ca fait 1min")
+        const bree = new Bree({
+            jobs: [{
+                name: "awards",
+                interval: "1 * L-7 * ?"
+            }]
         })
+        const graceful = new Graceful({ brees: [bree] });
+        graceful.listen();
+        bree.start();
     }
 }
 
