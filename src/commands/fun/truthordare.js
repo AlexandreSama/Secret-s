@@ -12,7 +12,7 @@ class TruthOrDareCommand extends Command {
         Array.prototype.random = function () {
             return this[Math.floor((Math.random()*this.length))];
         }
-        if(message.channel.id === "847434193780604938" || "822108267538677774"){
+        if(message.channel.id === "847434193780604938" && "822108267538677774"){
             message.channel.send("Alors " + message.author.username + ", Action ou Vérité ?... :smirk:").then(response => {
 
             const filter = message => message.author.id ;
