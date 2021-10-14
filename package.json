@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "@ladjs/graceful": "^1.0.5",
+    "@pm2/io": "^5.0.0",
     "bree": "^6.3.1",
     "discord-akairo": "github:SkyBlockDev/discord-akairo",
     "discord.js": "^13.1.0",
