@@ -33,7 +33,7 @@ class MessageCreateListener extends Listener {
         })
 
         let i = 0
-        messageSendSinceBotStarting.set(i++)
+        messageSendSinceBotStarting.set(i + 1)
     }
 }
 
