@@ -15,7 +15,8 @@ class WhoIsCommand extends Command {
         }
 
         message.delete()
-        message.channel.send("Ainsi tu souhaite résoudre une de mes petites énigmes ? :smirk: Bien ! En voici une pour toi...").then(response1 => {
+        if(message.channel.id === "847434193780604938" && "822108267538677774"){
+            message.channel.send("Ainsi tu souhaite résoudre une de mes petites énigmes ? :smirk: Bien ! En voici une pour toi...").then(response1 => {
 
             var connection = mysql.createConnection({
                 host: "localhost",
@@ -50,6 +51,7 @@ class WhoIsCommand extends Command {
                 }
             })
         })
+        }
     }
 }
 

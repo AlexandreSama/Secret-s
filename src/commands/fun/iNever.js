@@ -15,35 +15,36 @@ class iNeverCommand extends Command {
         }
 
         message.delete()
+        if(message.channel.id === "847434193780604938" && "822108267538677774"){
+            var connection = mysql.createConnection({
+                host: "localhost",
+                user: "root",
+                password: "alexandre123Sa",
+                database: "secrets",
+                supportBigNumbers: true,
+                bigNumberString: true,
+                charset: 'utf8mb4_general_ci'
+            })
 
-        var connection = mysql.createConnection({
-            host: "localhost",
-            user: "root",
-            password: "alexandre123Sa",
-            database: "secrets",
-            supportBigNumbers: true,
-            bigNumberString: true,
-            charset: 'utf8mb4_general_ci'
-        })
-
-        connection.query("SELECT * FROM inever", function(error, result){
-            if(error){
-                console.log(error)
-            }
-            if(result){
-                let dataINever = JSON.stringify(result)
-                let INever = JSON.parse(dataINever)
-                console.log(INever)
-                let oneINever = INever.random()
-                message.channel.send(oneINever['iNeverQuestion'] + " Alors, que va tu répondre ? La vérité ou un mensonge ? :smiling_imp:").then(response1 => {
-                    const filter = message => message.author.id ;
-                    response1.channel.awaitMessages({filter, max:1}).then(collector1 => {
-                        let responseFromPlayer = collector1.first().content;
-                        message.channel.send("Hmm... Je ne sais que faire de ta réponse... J'attends les ordres des autres..")
+            connection.query("SELECT * FROM inever", function(error, result){
+                if(error){
+                    console.log(error)
+                }
+                if(result){
+                    let dataINever = JSON.stringify(result)
+                    let INever = JSON.parse(dataINever)
+                    console.log(INever)
+                    let oneINever = INever.random()
+                    message.channel.send(oneINever['iNeverQuestion'] + " Alors, que va tu répondre ? La vérité ou un mensonge ? :smiling_imp:").then(response1 => {
+                        const filter = message => message.author.id ;
+                        response1.channel.awaitMessages({filter, max:1}).then(collector1 => {
+                            let responseFromPlayer = collector1.first().content;
+                            message.channel.send("Hmm... Je ne sais que faire de ta réponse... J'attends les ordres des autres..")
+                        })
                     })
-                })
-            }
-        })
+                }
+            })
+        }
     }
 }
 

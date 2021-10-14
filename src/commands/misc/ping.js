@@ -8,7 +8,7 @@ class PingCommand extends Command {
     }
 
     exec(message){
-        return message.reply('Pong !')
+        return message.reply('Ta gueule !')
     }
 }
 
