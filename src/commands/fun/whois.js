@@ -14,6 +14,7 @@ class WhoIsCommand extends Command {
             return this[Math.floor((Math.random()*this.length))];
         }
 
+        const filter = message => message.author.id ;
         message.delete()
         if(message.channel.id === "847434193780604938" && "822108267538677774"){
             message.channel.send("Ainsi tu souhaite résoudre une de mes petites énigmes ? :smirk: Bien ! En voici une pour toi...").then(response1 => {
@@ -38,7 +39,6 @@ class WhoIsCommand extends Command {
                     console.log(whoIs)
                     let oneWhoIs = whoIs.random()
                     message.channel.send("<@" + message.author.id + "> ! " + oneWhoIs['WhoIsQuestion']).then(response2 => {
-                        const filter = message => message.author.id ;
                         response2.channel.awaitMessages({filter, max:1}).then(collector1 => {
                             let responseFromPlayer = collector1.first().content.toLowerCase();
                             if(responseFromPlayer === oneWhoIs['WhoIsResponse']){
