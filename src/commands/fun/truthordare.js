@@ -27,7 +27,7 @@ class TruthOrDareCommand extends Command {
                         host: "localhost",
                         user: "root",
                         password: "alexandre123Sa",
-                        database: "secret's",
+                        database: "secrets",
                         supportBigNumbers: true,
                         bigNumberString: true
                     })
@@ -50,7 +50,7 @@ class TruthOrDareCommand extends Command {
                         host: "localhost",
                         user: "root",
                         password: "alexandre123Sa",
-                        database: "Secret's",
+                        database: "secrets",
                         supportBigNumbers: true,
                         bigNumberString: true
                     })

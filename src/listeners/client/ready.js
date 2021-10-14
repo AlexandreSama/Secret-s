@@ -12,15 +12,15 @@ class ReadyListener extends Listener {
 
     exec(client) {
         console.log('Je suis prêt !')
-        const bree = new Bree({
-            jobs: [{
-                name: "awards",
-                interval: "1 * L-7 * ?"
-            }]
-        })
-        const graceful = new Graceful({ brees: [bree] });
-        graceful.listen();
-        bree.start();
+        // const bree = new Bree({
+        //     jobs: [{
+        //         name: "awards",
+        //         interval: "1 * L-7 * ?"
+        //     }]
+        // })
+        // const graceful = new Graceful({ brees: [bree] });
+        // graceful.listen();
+        // bree.start();
     }
 }
 

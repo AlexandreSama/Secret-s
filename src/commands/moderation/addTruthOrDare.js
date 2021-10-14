@@ -25,7 +25,7 @@ class addToDCommand extends Command {
                             host: "localhost",
                             user: "root",
                             password: "alexandre123Sa",
-                            database: "secret's",
+                            database: "secrets",
                             supportBigNumbers: true,
                             bigNumberString: true,
                             charset: 'utf8mb4_general_ci'
