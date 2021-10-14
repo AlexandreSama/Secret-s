@@ -15,7 +15,7 @@ class iNeverCommand extends Command {
         }
 
         message.delete()
-        if(message.channel.id === "847434193780604938" && "822108267538677774"){
+        if(message.channel.id === "847434193780604938"|| "822108267538677774"){
             var connection = mysql.createConnection({
                 host: "localhost",
                 user: "root",
