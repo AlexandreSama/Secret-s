@@ -3,8 +3,8 @@ const { MessageEmbed } = require('discord.js');
 
 class HelpCommand extends Command {
     constructor() {
-        super('help', {
-            aliases: ['help']
+        super('support', {
+            aliases: ['support']
         });
     }
 
