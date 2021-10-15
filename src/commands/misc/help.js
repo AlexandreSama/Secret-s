@@ -11,7 +11,7 @@ class HelpCommand extends Command {
     exec(message){
         if(message.channel.id === "847434193780604938" && "822108267538677774"){
             const helpEmbed = new MessageEmbed()
-                .author('Moi-même')
+                .setAuthor('Moi-même')
                 .setTitle("Panneau des commandes")
                 .setDescription("Ici se trouve toutes les commandes du bot")
                 .addFields({
