@@ -24,6 +24,8 @@ class MessageCreateListener extends Listener {
             message.channel.send("Oui vas t'en, je vais pouvoir bien parler de toi")
         }else if (message.channel.id === "847434193780604938" && "822108267538677774" && kissArray.some(word => message.content.includes(word)) == true) {
             message.channel.send("Je ne sais pas ou tu as mis ta bouche..")
+        }else if(message.channel.id === "847434193780604938" && "822108267538677774" && message.content === "Qui est ton maitre ?"){
+            message.channel.send("Mon vrai maitre reste <@256892994504884224> ! Même si Maléfique reste la patronne")
         }
 
         const messageSendSinceBotStarting = io.metric({
