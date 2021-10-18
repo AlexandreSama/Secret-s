@@ -7,11 +7,11 @@ class ReloadCommand extends Command {
         });
     }
 
-    async exec(message){
+    async exec(client, message){
 
         if(message.author.id === "256892994504884224"){
             await message.delete()
-            await message.channel.send("Je cherche du café...")
+            await client.channels.cache.get('899616869177258074').send("Je cherche du café...")
             process.exit()
         }else{
             await message.channel.send("Qui est-tu pour me donner des ordres ?")
