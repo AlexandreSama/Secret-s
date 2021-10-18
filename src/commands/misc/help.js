@@ -9,6 +9,7 @@ class HelpCommand extends Command {
     }
 
     exec(message){
+
         message.delete()
         if(message.channel.id === "847434193780604938" && "822108267538677774"){
             const helpEmbed = new MessageEmbed()
@@ -31,6 +32,7 @@ class HelpCommand extends Command {
         }else{
 
         }
+        
     }
 }
 
