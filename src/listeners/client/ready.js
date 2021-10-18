@@ -31,6 +31,7 @@ class ReadyListener extends Listener {
         const task = new Task('météo', () => { 
             request('http://api.weatherstack.com/current?access_key=c43212b2b08a51670ded31b1accced45&query=Chicago', function(error, response, body){
 
+            console.log(body)
                 let heure = body['location']['localtime'].split(' ')
                 const embedMeteo = new MessageEmbed()
                 .setFooter('Présenté par votre chère Secret\'s !')
