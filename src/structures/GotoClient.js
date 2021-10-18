@@ -27,10 +27,10 @@ module.exports = class GotoClient extends AkairoClient {
             allowMention: true,
             prefix: config.prefix,
             defaultCooldown: 2000,
-            directory: './commands/'
+            directory: './src/commands/'
         });
         this.listernerHandler = new ListenerHandler(this, {
-            directory: './listeners/'
+            directory: './src/listeners/'
         });
 
         this.commandHandler.loadAll();
