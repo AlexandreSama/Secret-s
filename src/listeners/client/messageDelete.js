@@ -9,7 +9,7 @@ class MessageCreateListener extends Listener {
         });
     }
 
-    exec(message) {
+    async exec(message) {
 
         const deletedMessageEmbed = new MessageEmbed()
         .setAuthor('Secret\'s')
