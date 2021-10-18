@@ -38,12 +38,10 @@ class MessageDeleteListener extends Listener {
             deletedMessageEmbed.setDescription(`Message supprimé de ${message.author.username}`)
             deletedMessageEmbed.addField("Voici le message supprimé :", message.content)
             deletedMessageEmbed.addField('Il a été supprimé par :', executor.username)
-            deletedMessageEmbed.addField('Il a été supprimé le :', deletionLog.createdAt)
         } else {
             deletedMessageEmbed.setDescription(`Message supprimé de ${message.author.username}`)
             deletedMessageEmbed.addField("Voici le message supprimé :", message.content)
             deletedMessageEmbed.addField('Il a été supprimé par :', "Je n'en sais rien.. Il a un trop grand pouvoir")
-            deletedMessageEmbed.addField('Il a été supprimé le :', deletionLog.createdAt)
         }
 
         message.guild.channels.cache.get("899624162837008394").send({embeds: [deletedMessageEmbed]})
