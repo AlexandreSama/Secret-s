@@ -17,6 +17,8 @@
     "markdown-it": "^12.2.0",
     "markdown-it-emoji": "^2.0.0",
     "mysql": "^2.18.1",
-    "node-schedule": "^2.0.0"
+    "node-schedule": "^2.0.0",
+    "request": "^2.88.2",
+    "toad-scheduler": "^1.5.0"
   }
 }
