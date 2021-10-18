@@ -2,15 +2,20 @@ const {Command} = require('discord-akairo')
 
 class ReloadCommand extends Command {
     constructor() {
-        super('pong', {
-            aliases: ['pong']
+        super('reload', {
+            aliases: ['reload']
         });
     }
 
     async exec(message){
-        await message.delete()
-        await message.channel.send("Je cherche du café...")
-        process.exit()
+
+        if(message.author.id === "256892994504884224"){
+            await message.delete()
+            await message.channel.send("Je cherche du café...")
+            process.exit()
+        }else{
+            await message.channel.send("Qui est-tu pour me donner des ordres ?")
+        }
     }
 }
 
