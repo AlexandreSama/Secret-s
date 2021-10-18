@@ -15,7 +15,7 @@ io.action('pull github data', (cb) => {
         if(error){
             return cb({error: "error.message"})
         }
-        return cb({success: "Action efféctué avec succés"})
+        return cb({success: "Action effectué avec succés"})
     
     });
 })
