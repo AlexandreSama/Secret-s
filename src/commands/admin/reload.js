@@ -7,7 +7,7 @@ class ReloadCommand extends Command {
         });
     }
 
-    async exec(client, message){
+    async exec(message, client){
 
         if(message.author.id === "256892994504884224"){
             await message.delete()
