@@ -92,7 +92,7 @@ class ReadyListener extends Listener {
             meteoChannel.send({embeds: [embedMeteo]})
             })
         })
-        const job = new SimpleIntervalJob({ seconds: 20, }, task)
+        const job = new SimpleIntervalJob({ days: 1, }, task)
         
         scheduler.addSimpleIntervalJob(job)
 
