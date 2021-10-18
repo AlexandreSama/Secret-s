@@ -19,7 +19,6 @@ class MessageUpdateListener extends Listener {
         deletedMessageEmbed.addField("Voici le message original :", oldMessage.content)
         deletedMessageEmbed.addField('Et le message modifié :', newMessage.content)
         deletedMessageEmbed.addField('Il a été modifié dans le channel :', oldMessage.channel.name)
-        deletedMessageEmbed.addField('Et il a été modifié le :', newMessage.createdAt)
 
         newMessage.guild.channels.cache.get("899624162837008394").send({embeds: [deletedMessageEmbed]})
         
