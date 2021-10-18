@@ -1,9 +1,9 @@
 const {Listener} = require('discord-akairo')
 const { MessageEmbed } = require('discord.js');
 
-class MessageCreateListener extends Listener {
+class MessageDeleteListener extends Listener {
     constructor(){
-        super('messageCreate', {
+        super('messageDelete', {
             emitter: 'client',
             event: 'messageDelete'
         });
@@ -51,4 +51,4 @@ class MessageCreateListener extends Listener {
     }
 }
 
-module.exports = MessageCreateListener
+module.exports = MessageDeleteListener
