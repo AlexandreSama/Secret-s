@@ -12,6 +12,7 @@ class ReadyListener extends Listener {
 
     exec(client) {
         console.log('Je suis prêt !')
+        client.channels.cache.get('884720232827068446').send("J'ai trouvé du café, je retourne au boulot !")
         // const bree = new Bree({
         //     jobs: [{
         //         name: "awards",
