@@ -44,45 +44,7 @@ class MessageCreateListener extends Listener {
         let i = 0
         messageSendSinceBotStarting.set(i + 1)
 
-        let botID = "643495586783428618"
-        net.fromJSON(JSON.parse(fs.readFileSync('./neuralnet.json', 'utf8')));
-
-        if (message.content == "") {
-            return;
-        }
-
-        // is the sender is not the bot it must be a user
-        // remove any numbers and symbols and only send words
-        // to the ANN for processing.
-        if (message.author.id !== botID /*&& msg.channel.id === channelID*/ ) {
-
-            // reads the contents of the message.
-            var words = message.content;
-
-            // remove everything but letters.
-            var sentence = words.replace(/[^a-zA-Z ]+/g, "").toLowerCase();
-
-            // sends the reply to the channel.
-            message.channel.send(reply(net.run(sentence)));
-        }
-
-
-
-        /******************************************\
-        | Response Arrays                          |
-        | These lists can be added to for more     |
-        | randomness in the responses.             |
-        \******************************************/
-        var hello_reply = ["hi", "sup?", "yo", "hello"];
-        var bye_reply = ["bye", "cya", "good bye"];
-        var lol_reply = ["lol", "lmao", "heh", "funny"];
-        var weather_reply = ["yes what a nice day it is today", "how is it outside where you are?", "thats perfect weather"];
-        var yes_reply = ["thats the spirit", "ok then", "i agree"];
-        var no_reply = ["why not?", "NO!", "YES!", "ok then"];
-        var help_reply = ["id help you but im just a bot", "is there anyone who can assist?", "Id like to help."];
-
-
-        /*******************************************\
+/*******************************************\
         | This function takes the output of the ANN |
         | and returns a random reply string based   |
         | on that topic. If there is no match it    |
@@ -132,6 +94,45 @@ class MessageCreateListener extends Listener {
 
             return retstr;
         }
+
+
+
+        let botID = "643495586783428618"
+
+        if (message.content == "") {
+            return;
+        }
+
+        // is the sender is not the bot it must be a user
+        // remove any numbers and symbols and only send words
+        // to the ANN for processing.
+        if (message.author.id !== botID /*&& msg.channel.id === channelID*/ ) {
+
+            // reads the contents of the message.
+            var words = message.content;
+
+            // remove everything but letters.
+            var sentence = words.replace(/[^a-zA-Z ]+/g, "").toLowerCase();
+            net.fromJSON(JSON.parse(fs.readFileSync('neuralnet.json', 'utf8')));
+
+            // sends the reply to the channel.
+            message.channel.send(reply(net.run(sentence)));
+        }
+
+
+
+        /******************************************\
+        | Response Arrays                          |
+        | These lists can be added to for more     |
+        | randomness in the responses.             |
+        \******************************************/
+        var hello_reply = ["hi", "sup?", "yo", "hello"];
+        var bye_reply = ["bye", "cya", "good bye"];
+        var lol_reply = ["lol", "lmao", "heh", "funny"];
+        var weather_reply = ["yes what a nice day it is today", "how is it outside where you are?", "thats perfect weather"];
+        var yes_reply = ["thats the spirit", "ok then", "i agree"];
+        var no_reply = ["why not?", "NO!", "YES!", "ok then"];
+        var help_reply = ["id help you but im just a bot", "is there anyone who can assist?", "Id like to help."];
 
 
         /******************************************\
