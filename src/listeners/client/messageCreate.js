@@ -45,7 +45,7 @@ class MessageCreateListener extends Listener {
         messageSendSinceBotStarting.set(i + 1)
 
         let botID = "643495586783428618"
-        net.fromJSON(JSON.parse(fs.readFileSync('neuralnet.json', 'utf8')));
+        net.fromJSON(JSON.parse(fs.readFileSync('./neuralnet.json', 'utf8')));
 
         if (message.content == "") {
             return;
