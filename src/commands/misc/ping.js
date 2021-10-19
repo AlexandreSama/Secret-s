@@ -1,4 +1,6 @@
-const {Command} = require('discord-akairo')
+const {
+    Command
+} = require('discord-akairo')
 
 class PingCommand extends Command {
     constructor() {
@@ -7,7 +9,7 @@ class PingCommand extends Command {
         });
     }
 
-    exec(message){
+    exec(message) {
         return message.reply('Ta gueule !')
     }
 }

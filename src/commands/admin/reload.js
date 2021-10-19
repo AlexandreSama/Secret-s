@@ -1,4 +1,6 @@
-const {Command} = require('discord-akairo')
+const {
+    Command
+} = require('discord-akairo')
 
 class ReloadCommand extends Command {
     constructor() {
@@ -7,13 +9,13 @@ class ReloadCommand extends Command {
         });
     }
 
-    async exec(message){
+    async exec(message) {
 
-        if(message.author.id === "256892994504884224"){
+        if (message.author.id === "256892994504884224") {
             await message.delete()
             await message.guild.channels.cache.get('899616869177258074').send("Je cherche du café...")
             process.exit()
-        }else{
+        } else {
             await message.channel.send("Qui est-tu pour me donner des ordres ?")
         }
     }

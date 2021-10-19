@@ -1,8 +1,12 @@
-const {Listener} = require('discord-akairo')
-const { MessageEmbed } = require('discord.js');
+const {
+    Listener
+} = require('discord-akairo')
+const {
+    MessageEmbed
+} = require('discord.js');
 
 class MessageDeleteListener extends Listener {
-    constructor(){
+    constructor() {
         super('messageDelete', {
             emitter: 'client',
             event: 'messageDelete'
@@ -12,8 +16,8 @@ class MessageDeleteListener extends Listener {
     async exec(message) {
 
         const deletedMessageEmbed = new MessageEmbed()
-        .setAuthor('Secret\'s')
-        .setFooter('Toujours la pour servir dans l\'ombre..')
+            .setAuthor('Secret\'s')
+            .setFooter('Toujours la pour servir dans l\'ombre..')
 
 
         // Ignore direct messages
@@ -30,7 +34,10 @@ class MessageDeleteListener extends Listener {
 
         // Now grab the user object of the person who deleted the message
         // Also grab the target of this action to double-check things
-        const { executor, target } = deletionLog;
+        const {
+            executor,
+            target
+        } = deletionLog;
 
         // Update the output with a bit more information
         // Also run a check to make sure that the log returned was for the same author's message
@@ -46,8 +53,10 @@ class MessageDeleteListener extends Listener {
             deletedMessageEmbed.addField('Et a été supprimé dans le channel :', message.channel.name)
         }
 
-        message.guild.channels.cache.get("899624162837008394").send({embeds: [deletedMessageEmbed]})
-        
+        message.guild.channels.cache.get("899624162837008394").send({
+            embeds: [deletedMessageEmbed]
+        })
+
     }
 }
 

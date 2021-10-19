@@ -1,8 +1,10 @@
-const {Listener} = require('discord-akairo')
+const {
+    Listener
+} = require('discord-akairo')
 const io = require('@pm2/io')
 
 class MessageCreateListener extends Listener {
-    constructor(){
+    constructor() {
         super('messageCreate', {
             emitter: 'client',
             event: 'messageCreate'
@@ -10,7 +12,7 @@ class MessageCreateListener extends Listener {
     }
 
     exec(message) {
-        
+
         let helloArray = ['Bonjour', 'bonjour'] // Liste bonjour
         let badArray = ['pute'] // Liste gros mots
         let goodNightArray = ['Bonne nuit', 'bonne nuit'] // Liste bonne nuit
@@ -18,15 +20,15 @@ class MessageCreateListener extends Listener {
 
         console.log(message.content)
 
-        if(message.channel.id === "847434193780604938" && "822108267538677774" && helloArray.some(word => message.content.includes(word)) == true){
+        if (message.channel.id === "847434193780604938" && "822108267538677774" && helloArray.some(word => message.content.includes(word)) == true) {
             message.channel.send("Tiens.. Te voila toi ? Tu as quoi à me raconter ?")
-        }else if (message.channel.id === "847434193780604938" && "822108267538677774" && badArray.some(word => message.content.includes(word)) == true) {
+        } else if (message.channel.id === "847434193780604938" && "822108267538677774" && badArray.some(word => message.content.includes(word)) == true) {
             message.channel.send("On parle de qui ? Katherine ? Sélena ? Lexie ? Elyana ?")
-        }else if (message.channel.id === "847434193780604938" && "822108267538677774" && goodNightArray.some(word => message.content.includes(word)) == true) {
+        } else if (message.channel.id === "847434193780604938" && "822108267538677774" && goodNightArray.some(word => message.content.includes(word)) == true) {
             message.channel.send("Oui vas t'en, je vais pouvoir bien parler de toi")
-        }else if (message.channel.id === "847434193780604938" && "822108267538677774" && kissArray.some(word => message.content.includes(word)) == true) {
+        } else if (message.channel.id === "847434193780604938" && "822108267538677774" && kissArray.some(word => message.content.includes(word)) == true) {
             message.channel.send("Je ne sais pas ou tu as mis ta bouche..")
-        }else if(message.content === "Qui est ton maitre ?"){
+        } else if (message.content === "Qui est ton maitre ?") {
             message.channel.send("Mon vrai maitre reste <@256892994504884224> ! Même si Maléfique reste la patronne")
         }
 
