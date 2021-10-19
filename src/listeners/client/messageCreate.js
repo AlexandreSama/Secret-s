@@ -44,6 +44,73 @@ class MessageCreateListener extends Listener {
         let i = 0
         messageSendSinceBotStarting.set(i + 1)
 
+         /******************************************\
+        | Response Arrays                          |
+        | These lists can be added to for more     |
+        | randomness in the responses.             |
+        \******************************************/
+        var hello_reply = ["hi", "sup?", "yo", "hello"];
+        var bye_reply = ["bye", "cya", "good bye"];
+        var lol_reply = ["lol", "lmao", "heh", "funny"];
+        var weather_reply = ["yes what a nice day it is today", "how is it outside where you are?", "thats perfect weather"];
+        var yes_reply = ["thats the spirit", "ok then", "i agree"];
+        var no_reply = ["why not?", "NO!", "YES!", "ok then"];
+        var help_reply = ["id help you but im just a bot", "is there anyone who can assist?", "Id like to help."];
+
+        /******************************************\
+        | Builds a random greeting reply.          |
+        \******************************************/
+        const greeting = () => {
+
+            var terms = ["how are you?", "hows it going?", "how are you doing?"];
+            var str = "";
+            str += terms[Math.floor(Math.random() * terms.length)] + " ";
+
+            if (Math.random() >= 0.8) {
+                str += "I dont know about ";
+                switch (Math.floor(Math.random() * 3)) {
+                    case 0:
+                        str += "everyone else but ";
+                        break;
+                    case 1:
+                        str += "you but ";
+                        break;
+                    case 2:
+                        str += "them but ";
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            str += "im ";
+
+            if (Math.random() >= 0.7) {
+                var things = ["feeling ", "doing ", "being ", "genuinely "];
+                str += things[Math.floor(Math.random() * things.length)];
+            }
+
+            var feelings = ["great. ", "playful. ", "calm. ", "confident. ", "courageous. ", "peaceful. ",
+                "tragic. ", "neutral. ", "anxious. ", "pained. ", "wary. "
+            ];
+
+            str += feelings[Math.floor(Math.random() * feelings.length)];
+
+            if (Math.random() >= 0.8) {
+                var reasons = ["for some reason ", "just because ", "becasue i can "];
+                str += reasons[Math.floor(Math.random() * reasons.length)];
+
+                if (Math.random() >= 0.5) {
+                    str += "thanks for asking. ";
+                } else {
+                    str += ". ";
+                }
+            }
+            return str;
+
+        }
+
 /*******************************************\
         | This function takes the output of the ANN |
         | and returns a random reply string based   |
@@ -119,75 +186,6 @@ class MessageCreateListener extends Listener {
             message.channel.send(reply(net.run(sentence)));
         }
 
-
-
-        /******************************************\
-        | Response Arrays                          |
-        | These lists can be added to for more     |
-        | randomness in the responses.             |
-        \******************************************/
-        var hello_reply = ["hi", "sup?", "yo", "hello"];
-        var bye_reply = ["bye", "cya", "good bye"];
-        var lol_reply = ["lol", "lmao", "heh", "funny"];
-        var weather_reply = ["yes what a nice day it is today", "how is it outside where you are?", "thats perfect weather"];
-        var yes_reply = ["thats the spirit", "ok then", "i agree"];
-        var no_reply = ["why not?", "NO!", "YES!", "ok then"];
-        var help_reply = ["id help you but im just a bot", "is there anyone who can assist?", "Id like to help."];
-
-
-        /******************************************\
-        | Builds a random greeting reply.          |
-        \******************************************/
-        const greeting = () => {
-
-            var terms = ["how are you?", "hows it going?", "how are you doing?"];
-            var str = "";
-            str += terms[Math.floor(Math.random() * terms.length)] + " ";
-
-            if (Math.random() >= 0.8) {
-                str += "I dont know about ";
-                switch (Math.floor(Math.random() * 3)) {
-                    case 0:
-                        str += "everyone else but ";
-                        break;
-                    case 1:
-                        str += "you but ";
-                        break;
-                    case 2:
-                        str += "them but ";
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-
-            str += "im ";
-
-            if (Math.random() >= 0.7) {
-                var things = ["feeling ", "doing ", "being ", "genuinely "];
-                str += things[Math.floor(Math.random() * things.length)];
-            }
-
-            var feelings = ["great. ", "playful. ", "calm. ", "confident. ", "courageous. ", "peaceful. ",
-                "tragic. ", "neutral. ", "anxious. ", "pained. ", "wary. "
-            ];
-
-            str += feelings[Math.floor(Math.random() * feelings.length)];
-
-            if (Math.random() >= 0.8) {
-                var reasons = ["for some reason ", "just because ", "becasue i can "];
-                str += reasons[Math.floor(Math.random() * reasons.length)];
-
-                if (Math.random() >= 0.5) {
-                    str += "thanks for asking. ";
-                } else {
-                    str += ". ";
-                }
-            }
-            return str;
-
-        }
     }
 
 }
