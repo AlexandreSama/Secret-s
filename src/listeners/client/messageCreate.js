@@ -150,7 +150,7 @@ class MessageCreateListener extends Listener {
                     break;
                 case 7:
                     retstr = greeting();
-                    brak;
+                    break;
                 case 8:
                     retstr = help_reply[Math.floor(Math.random() * help_reply.length)];
                     break;
