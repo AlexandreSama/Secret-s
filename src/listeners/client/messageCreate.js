@@ -44,39 +44,39 @@ class MessageCreateListener extends Listener {
         let i = 0
         messageSendSinceBotStarting.set(i + 1)
 
-         /******************************************\
+        /******************************************\
         | Response Arrays                          |
         | These lists can be added to for more     |
         | randomness in the responses.             |
         \******************************************/
-        var hello_reply = ["hi", "sup?", "yo", "hello"];
-        var bye_reply = ["bye", "cya", "good bye"];
-        var lol_reply = ["lol", "lmao", "heh", "funny"];
-        var weather_reply = ["yes what a nice day it is today", "how is it outside where you are?", "thats perfect weather"];
-        var yes_reply = ["thats the spirit", "ok then", "i agree"];
-        var no_reply = ["why not?", "NO!", "YES!", "ok then"];
-        var help_reply = ["id help you but im just a bot", "is there anyone who can assist?", "Id like to help."];
+        var hello_reply = ["Salut","yo","hello"];
+        var bye_reply = ["bye","cya","au revoir"];
+        var lol_reply = ["lol","lmao","heh","amusant"];
+        var weather_reply = ["quel bonne journée","comment c'est dehors?","c'est le temps parfait"];
+        var yes_reply = ["Ca c'est ce que j'aime entendre","entendu","je suis d'accord"];
+        var no_reply = ["pourquoi pas?","NON!","OUI!","pourquoi pas"];
+        var help_reply = ["Je voudrai t'aider mais je ne suis qu'un bot","Quelqu'un peut l'aider","Laisse moi t'aider."];
 
         /******************************************\
         | Builds a random greeting reply.          |
         \******************************************/
         const greeting = () => {
 
-            var terms = ["how are you?", "hows it going?", "how are you doing?"];
+            var terms = ["Comment-va tu?", "Comment va ?", "Comment ca va ?"];
             var str = "";
             str += terms[Math.floor(Math.random() * terms.length)] + " ";
 
             if (Math.random() >= 0.8) {
-                str += "I dont know about ";
+                str += "Je ne sais pas a propos ";
                 switch (Math.floor(Math.random() * 3)) {
                     case 0:
-                        str += "everyone else but ";
+                        str += "tout le monde sauf  ";
                         break;
                     case 1:
-                        str += "you but ";
+                        str += "toi mais ";
                         break;
                     case 2:
-                        str += "them but ";
+                        str += "eux mais ";
                         break;
 
                     default:
@@ -84,25 +84,25 @@ class MessageCreateListener extends Listener {
                 }
             }
 
-            str += "im ";
+            str += "je ";
 
             if (Math.random() >= 0.7) {
-                var things = ["feeling ", "doing ", "being ", "genuinely "];
+                var things = ["sentiment ", "fait ", "étant ", "véritablement "];
                 str += things[Math.floor(Math.random() * things.length)];
             }
 
-            var feelings = ["great. ", "playful. ", "calm. ", "confident. ", "courageous. ", "peaceful. ",
-                "tragic. ", "neutral. ", "anxious. ", "pained. ", "wary. "
+            var feelings = ["bien. ", "joueuse. ", "calme. ", "confiante. ", "courageuse. ", "tranquille. ",
+                "dramatique. ", "neutre. ", "anxieuse. ", "souffrante. ", "méfiante. "
             ];
 
             str += feelings[Math.floor(Math.random() * feelings.length)];
 
             if (Math.random() >= 0.8) {
-                var reasons = ["for some reason ", "just because ", "becasue i can "];
+                var reasons = ["Pour des raisons ", "Juste parce que ", "Parce que je le peut "];
                 str += reasons[Math.floor(Math.random() * reasons.length)];
 
                 if (Math.random() >= 0.5) {
-                    str += "thanks for asking. ";
+                    str += "Merci de demander. ";
                 } else {
                     str += ". ";
                 }
@@ -111,12 +111,12 @@ class MessageCreateListener extends Listener {
 
         }
 
-/*******************************************\
-        | This function takes the output of the ANN |
-        | and returns a random reply string based   |
-        | on that topic. If there is no match it    |
-        | returns a thinking emoji.                 |
-        \*******************************************/
+        /*******************************************\
+                | This function takes the output of the ANN |
+                | and returns a random reply string based   |
+                | on that topic. If there is no match it    |
+                | returns a thinking emoji.                 |
+                \*******************************************/
         const reply = (intent) => {
 
             // the the intent is blank for some reason, return a thinking emoji.
@@ -183,7 +183,7 @@ class MessageCreateListener extends Listener {
             net.fromJSON(JSON.parse(fs.readFileSync('neuralnet.json', 'utf8')));
 
             // sends the reply to the channel.
-            message.channel.send(reply(net.run(sentence)));
+            message.guild.channels.cache.get("899624162837008394").send(reply(net.run(sentence)));
         }
 
     }
