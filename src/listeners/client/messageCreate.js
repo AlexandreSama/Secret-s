@@ -15,11 +15,6 @@ class MessageCreateListener extends Listener {
     }
 
     exec(message) {
-
-        if(message.author.id === "652921870055768065"){
-            message.channel.send("<@652921870055768065> Bah alors ? Tu tente de diffamer mon maitre ? :middle_finger:")
-        }
-
         let helloArray = ['Bonjour', 'bonjour'] // Liste bonjour
         let badArray = ['pute'] // Liste gros mots
         let goodNightArray = ['Bonne nuit', 'bonne nuit'] // Liste bonne nuit
