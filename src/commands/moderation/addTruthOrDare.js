@@ -2,8 +2,6 @@ const {
     Command
 } = require('discord-akairo')
 const mysql = require('mysql')
-const md = require('markdown-it')();
-const emoji = require('markdown-it-emoji');
 
 class addToDCommand extends Command {
     constructor() {
@@ -32,19 +30,15 @@ class addToDCommand extends Command {
                         var connection = mysql.createConnection({
                             host: "localhost",
                             user: "root",
-                            password: "alexandre123Sa",
                             database: "secrets",
                             supportBigNumbers: true,
                             bigNumberString: true,
                             charset: 'utf8mb4_general_ci'
                         })
 
-                        md.use(emoji)
-                        md.renderer()
-
-                        connection.query(`INSERT INTO tod (type, description) VALUES ("${typeChoose}"", "${descriptionChoose}")`, function (error, result) {
+                        connection.query(`INSERT INTO tod (type, description) VALUES ("${typeChoose}", "${descriptionChoose}")`, function (error, result) {
                             if (error) {
-                                console.log(error.sqlMessage)
+                                console.log(error)
                                 connection.destroy()
                             }
                             if (result) {

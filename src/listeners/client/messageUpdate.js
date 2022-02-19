@@ -1,34 +1,45 @@
 const {
     Listener
 } = require('discord-akairo')
-const {
-    MessageEmbed
-} = require('discord.js');
+const Discord = require('discord.js');
+const config = require('../../config.json')
 
-class MessageUpdateListener extends Listener {
+class messageUpdateListener extends Listener {
     constructor() {
-        super('messageUpdate', {
+        super('messageUpdateListener', {
             emitter: 'client',
             event: 'messageUpdate'
         });
     }
 
-    async exec(oldMessage, newMessage) {
+    exec(oldMessage, newMessage) {
 
-        const deletedMessageEmbed = new MessageEmbed()
-            .setAuthor('Secret\'s')
-            .setFooter('Toujours la pour servir dans l\'ombre..')
+        console.log('Message Update')
 
-        deletedMessageEmbed.setDescription(`Message modifié de ${oldMessage.author.username}`)
-        deletedMessageEmbed.addField("Voici le message original :", oldMessage.content)
-        deletedMessageEmbed.addField('Et le message modifié :', newMessage.content)
-        deletedMessageEmbed.addField('Il a été modifié dans le channel :', oldMessage.channel.name)
+        if (!newMessage.author.bot && newMessage.system == false && newMessage.channel.type == 'GUILD_TEXT') {
 
-        newMessage.guild.channels.cache.get("899624162837008394").send({
-            embeds: [deletedMessageEmbed]
-        })
+            const embedInfos = new Discord.MessageEmbed()
+                .setColor('#FF6C00')
+                .setAuthor(this.client.user.username, this.client.user.displayAvatarURL)
+                .setTitle('Message Modifié !')
+                .setDescription(`Un message de <@${newMessage.author.id}> a été modifié !`)
+                .addFields({
+                    name: "Ancien message",
+                    value: oldMessage.content,
+                    inline: true
+                }, {
+                    name: "Nouveau message",
+                    value: newMessage.content,
+                    inline: true
+                })
+                .setImage(newMessage.author.displayAvatarURL())
+                .setTimestamp(Date.now())
 
+            newMessage.guild.channels.cache.find(channel => channel.id === "899616869177258074").send({
+                embeds: [embedInfos]
+            })
+        }
     }
 }
 
-module.exports = MessageUpdateListener
+module.exports = messageUpdateListener
