@@ -36,6 +36,13 @@ class messageCreateListener extends Listener {
             })
 
         }
+
+        if(message.content === "Qui est la maitresse d'Alexandre ?"){
+            message.reply('Ainsi, tu souhaite découvrir l\'identité de la maitresse de mon créateur ? \n Ainsi soit-il !')
+            const attachment = new Discord.MessageAttachment("AydenQueen.jpg")
+            message.channel.send({content: "Voici la maitresse de mon diabolique maitre !", files: [attachment]})
+            message.channel.send('Essaye de lui arriver a la cheville (Ou apporte des gaufres)')
+        }
     }
 }
 
