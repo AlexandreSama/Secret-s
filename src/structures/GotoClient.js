@@ -17,8 +17,8 @@ module.exports = class GotoClient extends AkairoClient {
             presence: {
                 status: 'dnd',
                 activities: [{
-                    name: 'Vos petits secrets',
-                    type: "WATCHING"
+                    name: 'Ecrire un article',
+                    type: "PLAYING"
                 }]
             },
             intents: 32767

@@ -14,8 +14,6 @@ class messageUpdateListener extends Listener {
 
     exec(oldMessage, newMessage) {
 
-        console.log('Message Update')
-
         if (!newMessage.author.bot && newMessage.system == false && newMessage.channel.type == 'GUILD_TEXT') {
 
             const embedInfos = new Discord.MessageEmbed()

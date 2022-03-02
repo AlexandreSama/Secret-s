@@ -16,8 +16,6 @@ class messageDeleteListener extends Listener {
 
         if (!message.author.bot && message.system == false && message.channel.type == 'GUILD_TEXT') {
 
-            console.log('Message Delete')
-
             const embedInfos = new Discord.MessageEmbed()
                 .setColor('#FF0000')
                 .setAuthor(this.client.user.username, this.client.user.displayAvatarURL)
