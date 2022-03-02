@@ -14,6 +14,18 @@ class messageCreateListener extends Listener {
 
     exec(message) {
 
+        let welcomeDay = ['Bonjour Secret\'s', "bonjour secrets", "Bonjour secret's", "bonjour Secret's"]
+        let welcomeNight = ['Bonsoir Secret\'s', "bonsoir secrets", "Bonsoir secret's", "bonsoir Secret's"]
+        welcomeDay.forEach(element => {
+            if(message.content == element){
+                message.channel.send('Bonjour mon chère petit esclave :smiling_imp:')
+            }
+        })
+        welcomeNight.forEach(element => {
+            if(message.content == element){
+                message.channel.send('Bonsoir mon chère petit esclave :smiling_imp:')
+            }
+        })
         if (!message.author.bot && message.system == false && message.channel.type == 'GUILD_TEXT') {
 
             console.log('Message Create')
