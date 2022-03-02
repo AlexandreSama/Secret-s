@@ -14,7 +14,9 @@ class messageCreateListener extends Listener {
 
     exec(message) {
 
-        let welcomeDay = ['Bonjour Secret\'s', "bonjour secrets", "Bonjour secret's", "bonjour Secret's"]
+        if(message.channel.id === "822108267538677774"){
+
+            let welcomeDay = ['Bonjour Secret\'s', "bonjour secrets", "Bonjour secret's", "bonjour Secret's"]
         let welcomeNight = ['Bonsoir Secret\'s', "bonsoir secrets", "Bonsoir secret's", "bonsoir Secret's"]
         welcomeDay.forEach(element => {
             if(message.content == element){
@@ -40,6 +42,8 @@ class messageCreateListener extends Listener {
         }
         if(message.content.includes("Ou est Mal ?") || message.content.includes("ou est Mal ?") || message.content.includes("Ou est Mal") || message.content.includes("ou est Mal")){
             message.reply('Actuellement ? Disparu dans les méandres des abdos de Jason Statham :smiling_imp:')
+        }
+
         }
 
         if (!message.author.bot && message.system == false && message.channel.type == 'GUILD_TEXT') {
