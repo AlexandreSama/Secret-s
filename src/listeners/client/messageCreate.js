@@ -60,8 +60,8 @@ class messageCreateListener extends Listener {
                 },
                 {
                     name: "Dans le salon :",
-                    value: `<@${message.channel.id}>`,
-                    inline: true
+                    value: `<#${message.channel.id}>`,
+                    inline: false
                 })
                 .setImage(message.author.displayAvatarURL())
                 .setTimestamp(Date.now())

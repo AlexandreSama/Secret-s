@@ -22,7 +22,7 @@ class messageDeleteListener extends Listener {
                 .setTitle('Message Supprimé !')
                 .setDescription(`Un message de <@${message.author.id}> a été supprimé !`)
                 .addField('Contenu du message :', message.content, true)
-                .addField('Dans le salon :', `<@${message.channel.id}>`, true)
+                .addField('Dans le salon :', `<#${message.channel.id}>`, false)
                 .setImage(message.author.displayAvatarURL())
                 .setTimestamp(Date.now())
             message.guild.channels.cache.find(channel => channel.id === "899616869177258074").send({
