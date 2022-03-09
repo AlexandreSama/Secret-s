@@ -11,7 +11,6 @@ class ReadyListener extends Listener {
     }
 
     exec(client) {
-        client.channels.cache.get('899616869177258074').send("Va te faire foutre Val")
         console.log('Ready !')
     }
 }

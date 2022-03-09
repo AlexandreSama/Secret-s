@@ -29,6 +29,10 @@ class messageUpdateListener extends Listener {
                     name: "Nouveau message",
                     value: newMessage.content,
                     inline: true
+                },{
+                    name: "Dans le salon :",
+                    value: `<@${newMessage.channel.id}>`,
+                    inline: true
                 })
                 .setImage(newMessage.author.displayAvatarURL())
                 .setTimestamp(Date.now())
