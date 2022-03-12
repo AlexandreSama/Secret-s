@@ -32,6 +32,7 @@ class TruthOrDareCommand extends Command {
                         var connection = mysql.createConnection({
                             host: "localhost",
                             user: "root",
+                            password: "alexandre123Sa",
                             database: "secrets",
                             supportBigNumbers: true,
                             bigNumberString: true
