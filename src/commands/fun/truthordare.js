@@ -42,7 +42,11 @@ class TruthOrDareCommand extends Command {
                             if (error) {
                                 console.log(error)
                             }
-                            message.channel.send("<@" + message.author.id + "> ! " + result[0])
+                            let dataDare = JSON.stringify(result)
+                            let dares = JSON.parse(dataDare)
+                            console.log(dares)
+                            let oneDare = dares.random()
+                            message.channel.send("<@" + message.author.id + "> ! " + oneDare['description'])
                             connection.destroy()
                         })
 
