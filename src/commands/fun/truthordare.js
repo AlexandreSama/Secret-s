@@ -53,7 +53,7 @@ class TruthOrDareCommand extends Command {
                     } else if (tod === "vérité") {
 
                         var connection = mysql.createConnection({
-                            host: "localhost",
+                            host: "193.168.146.71",
                             user: "root",
                             password: "alexandre123Sa",
                             database: "secrets",
