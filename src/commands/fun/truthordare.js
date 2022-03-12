@@ -38,7 +38,7 @@ class TruthOrDareCommand extends Command {
                             bigNumberString: true
                         })
 
-                        connection.query('SELECT * FROM tod WHERE type = "dare"', function (error, result) {
+                        connection.query('SELECT * FROM tod WHERE type = "Action"', function (error, result) {
                             if (error) {
                                 console.log(error)
                             }
@@ -61,7 +61,7 @@ class TruthOrDareCommand extends Command {
                             bigNumberString: true
                         })
 
-                        connection.query('SELECT * FROM tod WHERE type = "truth"', function (error, result) {
+                        connection.query('SELECT * FROM tod WHERE type = "Vérité"', function (error, result) {
                             if (error) {
                                 console.log(error)
                             }
