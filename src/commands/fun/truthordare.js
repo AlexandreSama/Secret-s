@@ -30,7 +30,7 @@ class TruthOrDareCommand extends Command {
                     if (tod === "action") {
 
                         var connection = mysql.createConnection({
-                            host: "phpmyadmin.cyril59310.fr",
+                            host: "193.168.146.71",
                             user: "root",
                             password: "alexandre123Sa",
                             database: "secrets",
